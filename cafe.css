@@ -1,0 +1,279 @@
+/* 基本リセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 全体設定 */
+body {
+    font-family: 'Noto Serif JP', serif; /* 日本語フォント */
+    color: #333;
+    line-height: 1.8;
+    background-color: #fff;
+    font-size: 16px;
+}
+
+/* 共通セクション設定 */
+.section-container {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 60px auto;
+    width: 90%;
+}
+
+/* ボタン（共通） */
+.button-link {
+    display: inline-block;
+    padding: 12px 30px;
+    margin-top: 30px;
+    background-color: #A9A986; /* 画像から読み取れるアースカラー */
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    transition: background-color 0.3s;
+}
+
+.button-link:hover {
+    background-color: #8C8C6C;
+}
+
+/* ヘッダーとナビゲーション */
+header {
+    background-color: rgba(0, 0, 0, 0.7); /* 少し透明感のある背景 */
+    color: #fff;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    padding: 5px 0;
+    position: relative;
+}
+
+.reservation-btn {
+    background-color: #A9A986;
+    padding: 8px 15px !important;
+    margin-left: 35px;
+}
+
+/* 親コンテナの設定 */
+.image-stack {
+    position: relative; /* ★重要: これを基準に子要素を絶対配置する */
+    width: 400px;      /* コンテナの幅を設定 (土台画像のサイズに合わせる) */
+    height: 300px;     /* コンテナの高さを設定 (土台画像のサイズに合わせる) */
+    margin: 50px auto; /* 中央寄せなどのレイアウト調整 */
+}
+
+/* 土台の画像 (位置は静的または親コンテナに合わせる) */
+.main-image {
+   background-position: center center; /* または単に center; としてもOK */
+    /* background-position: center;  と書くと、水平・垂直ともに中央になります */
+    
+    background-repeat: no-repeat;
+    display: flex; /* 文字の中央寄せのため */
+    align-items: center; /* 垂直方向中央寄せ */
+    justify-content: flex-start; /* 水平方向左寄せ（flex-start） */
+    padding-left: 10%; /* 左からの余白を調整 */
+    margin-top: 60px; /* ヘッダーの高さ分 */
+}
+
+/* 重ねる画像 (絶対配置で位置を調整) */
+.overlay-image {
+    position: absolute; /* ★重要: 親要素のどこに配置するかを top/left/right/bottom で指定 */
+    top: 90%;
+    left: 15%;          
+    width: 600px;     /* 重ねる画像のサイズを調整 */
+    height: auto;
+    z-index: 10;        /* 必要に応じて、確実に上に表示するために z-index を指定 */
+}
+
+.main-title {
+    font-size: 3rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px 40px;
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+}
+
+/* ABOUTセクション */
+.about-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.about-image-box {
+    flex: 1;
+}
+
+.about-image-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.about-text-box {
+    flex: 1;
+    padding-top: 30px;
+}
+
+
+/* MENUセクション */
+.menu-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.menu-item {
+    width: 30%;
+    text-align: center;
+}
+
+
+/* NEWSセクション */
+.news-list {
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: left;
+}
+
+.news-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+}
+
+.news-item:first-child {
+    border-top: 1px solid #eee;
+}
+
+.news-date {
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.05em;
+    width: 100px; /* 日付の幅を固定 */
+}
+
+.news-title {
+    flex-grow: 1;
+}
+
+/* ACCESSセクション */
+.access-visual {
+    margin: 40px auto;
+    max-width: 800px;
+}
+
+.access-visual img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.access-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    max-width: 450px;
+    margin: 50px auto 0;
+    text-align: left;
+    gap: 15px 20px;
+}
+
+.info-label {
+    font-weight: bold;
+    color: #666;
+}
+
+/* フッター */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 50px 20px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.footer-logo {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    flex-basis: 30%;
+}
+
+.footer-links {
+    flex-basis: 60%;
+    font-size: 0.9rem;
+}
+
+.footer-links p {
+    margin-bottom: 5px;
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #ccc;
+}
